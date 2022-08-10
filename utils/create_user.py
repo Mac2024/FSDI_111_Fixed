@@ -1,5 +1,7 @@
 import requests
 
+URL = "http://127.0.0.1:5000/users"
+
 
 def create_user(first_name, last_name, hobbies):
     user = {
@@ -7,6 +9,7 @@ def create_user(first_name, last_name, hobbies):
         "last_name": last_name,
         "hobbies": hobbies
     }
+    
     response = requests.post(URL, json=user)
     if response.status_code == 201:
         print(
